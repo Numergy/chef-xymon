@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 case node['platform']
-when 'ubuntu'
+when 'ubuntu', 'debian'
   include_recipe 'xymon::ubuntu_client'
 when 'centos'
   include_recipe 'xymon::centos_client'

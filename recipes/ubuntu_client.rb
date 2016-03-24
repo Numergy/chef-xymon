@@ -17,7 +17,7 @@
 fail 'Unexpected platform' unless node['platform'] == 'ubuntu' || node['platform'] == 'debian'
 
 app_name = 'xymon'
-app_name = 'hobbit' if node['platform_family'] =~ /debian/i && node['platform_version'].to_i < 14
+app_name = 'hobbit' if node['platform'] =~ /ubuntu/i && node['platform_version'].to_i < 14
 
 service_name = "#{app_name}-client"
 user_name = app_name

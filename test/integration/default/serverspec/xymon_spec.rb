@@ -11,7 +11,7 @@ if %w(debian ubuntu).include? os[:family]
 end
 
 app_name = 'xymon'
-app_name = 'hobbit' if %w(debian ubuntu).include?(os[:family]) && os[:release].to_i < 14
+app_name = 'hobbit' if os[:platform] == 'ubuntu' && os[:release].to_i < 14
 service_name = "#{app_name}-client"
 if %w(debian ubuntu).include? os[:family]
   config_file = "/etc/default/#{service_name}"
